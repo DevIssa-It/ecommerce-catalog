@@ -1,6 +1,6 @@
 const BASE_URL = "https://fakestoreapi.com/products";
 
-export async function fetchProudctsById (id: number) {
+export async function fetchProductsById (id: number) {
     try {
         const response = await fetch (`${BASE_URL}/${id}`);
         if (!response.ok) {

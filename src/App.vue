@@ -1,10 +1,49 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { ref, computed, onMounted } from "vue";
+import ProductCard from "./components/ProductCard.vue";
+import { fetchProductsById } from "./services/ProductService.ts";
+import "./assets/styles.css"
+
+const index = ref(1);
+const currentProduct = ref<any>(null);
+
+const loadProduct = async () => {
+  try {
+    const product =await fetchProductsById(index.value);
+    if (
+      product.category === "men's clothing" ||
+      product.category === "women's clothing"
+    ) {
+      currentProduct.value = product;
+    } else {
+      currentProduct.value = null;
+    }
+  } catch {
+    currentProduct.value = null;
+  }
+}
+
+const nextProduct = () => {
+  index.value++
+  if (index.value > 20) index.value = 1;
+  loadProduct(); {
+  }
+}
+
+onMounted(loadProduct);
+
+const pageClass = computed(() => {
+  if (!currentProduct.value) return "page-unavailable";
+  if (currentProduct.value.category === "men's clothing") return "page-men";
+  if (currentProduct.value.category === "women's clothing") return "page-women";
+  return "page-unavailable";
+});
+
 </script>
 
 <template>
-  <div id="app">
-    <RouterView />
+  <div :class="[ 'page', pageClass]">
+    <productCard :product="currentProduct" @next="nextProduct" />
   </div>
 </template>
 
