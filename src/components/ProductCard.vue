@@ -32,7 +32,7 @@
                 <div class="product-details">
                     <p class="category"> {{ product.category }}</p>
                     <div class="rating">
-                        <span class="rating-text"> {{ product.rating.rate }}</span>
+                        <span class="rating-text"> {{ product.rating.rate }}/5</span>
                         <div class="rating-circle">
                             <span 
                                 v-for="star in 5"
@@ -90,11 +90,11 @@
     object-fit: contain;
 }
 
-.product-title {
-    font-family: 'inter', sans-serif;
-    font-size: 28px;
-    margin-bottom: 12px;
-    color: var(--men-primary);
+.product-description {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .product-info {
@@ -110,8 +110,24 @@
     justify-content: space-between;
     align-items: center;
     margin: 12px 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 12px;
 }
 
+.category {
+    font-family: 'inter', sans-serif;
+    font-size: 18px;
+    color: #3F3F3F;
+}
+
+.description {
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
+    color: #1E1E1E;
+    margin-top: 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
 
 .product-actions {
     display: flex;
@@ -119,20 +135,20 @@
     justify-content: flex-end;
     align-items: flex-start;
     gap: 0;
-}
-
-.price {
-    font-weight: bold;
-    margin: 12px 0;
-    font-family: 'inter', sans-serif;
-    font-size: 28px;
-    color: var(--men-primary);
+    border-top: 1px solid black;
+    padding-top: 12px;
 }
 
 .rating {
     display: flex;
     align-items: center;
     gap: 6px;
+}
+
+.rating-text {
+    font-family: 'inter', sans-serif;
+    font-size: 18px;
+    color: #3F3F3F;
 }
 
 .actions {
@@ -142,7 +158,7 @@
 }
 
 .buy-now, .next-product {
-    padding: 12px;
+    padding: 6px;
     border-radius: var(--btn-radius);
     border: none;
     cursor: pointer;
@@ -195,12 +211,14 @@
 .product-unavailable .next-product {
     position: relative;
     z-index: 2;
-    padding: 16px 250px;
+    padding: 10px 250px;
     border-radius: var(--btn-radius);
     border: 3px solid #1E1E1E;
     cursor: pointer;
     font-weight: 600;
     background-color: white;
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
     color: #3F3F3F;
     transition: background-color 0.3s ease;
     width: auto;

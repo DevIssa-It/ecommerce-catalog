@@ -79,9 +79,28 @@ body, html {
     background: linear-gradient(to bottom, var(--unavailable-bg) 66.67%, white 66.67%);
 }
 
+.page-men .product-title {
+    font-family: 'inter', sans-serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--men-primary);
+    font-weight: 600;
+}
+
+.page-men .price {
+    font-weight: 600;
+    margin: 12px 0;
+    font-family: 'inter', sans-serif;
+    font-size: 28px;
+    color: var(--men-primary);
+}
+
 .page-men .buy-now {
     background: var(--men-primary);
     color: white;
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .page-men .buy-now:hover {
@@ -92,15 +111,37 @@ body, html {
     border: 3px solid var(--men-primary);
     background: white;
     color: var(--men-primary);
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .page-men .next-product:hover {
     background: #DCDCDC;
 }
 
+.page-women .product-title {
+    font-family: 'inter', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--women-primary);
+}
+
+.page-women .price {
+    font-weight: 600;
+    margin: 12px 0;
+    font-family: 'inter', sans-serif;
+    font-size: 28px;
+    color: var(--women-primary);
+}
+
 .page-women .buy-now {
     background: var(--women-primary);
     color: white;
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .page-women .buy-now:hover {
@@ -111,6 +152,9 @@ body, html {
     border: 3px solid var(--women-primary);
     background: white;
     color: var(--women-primary);
+    font-family: 'inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .page-women .next-product:hover {

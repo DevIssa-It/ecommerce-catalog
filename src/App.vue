@@ -4,8 +4,21 @@ import ProductCard from "./components/ProductCard.vue";
 import { fetchProductsById } from "./services/ProductService.ts";
 import "./assets/styles.css"
 
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
+
 const index = ref(1);
-const currentProduct = ref<any>(null);
+const currentProduct = ref<Product | null>(null);
 
 const loadProduct = async () => {
   try {
