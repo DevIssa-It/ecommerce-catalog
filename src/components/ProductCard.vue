@@ -29,7 +29,6 @@
         else if (oldProduct !== null && newProduct === null) {
             isLoading.value = true;
             showUnavailable.value = false;
-            // Setelah delay, jika masih null = unavailable
             setTimeout(() => {
                 if (props.product === null) {
                     isLoading.value = false;
@@ -41,7 +40,6 @@
         else if (oldProduct === undefined && newProduct === null) {
             isLoading.value = true;
             showUnavailable.value = false;
-            // Timeout untuk initial load juga
             setTimeout(() => {
                 if (props.product === null) {
                     isLoading.value = false;
@@ -54,7 +52,6 @@
     // Watch untuk loading state yang di-trigger manual
     watch(() => isLoading.value, (newLoading) => {
         if (newLoading && props.product === null) {
-            // Jika loading di-trigger manual dan product null, set timeout
             setTimeout(() => {
                 if (props.product === null && isLoading.value) {
                     isLoading.value = false;
@@ -102,7 +99,6 @@
     </div>
 
     <div v-else-if="product" class="product-card">
-        <!-- Product Data -->
         <div class="product-image">
             <img :src="product.image" :alt="product.title" />
         </div>
@@ -566,62 +562,6 @@
 
 .product-unavailable .next-product:hover {
     background-color: #DCDCDC;
-}
-
-/* Shimmer Animation */
-@keyframes shimmer {
-    0% {
-        background-position: -200px 0;
-    }
-    100% {
-        background-position: calc(200px + 100%) 0;
-    }
-}
-
-.shimmer-box {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200px 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 4px;
-}
-
-.image-shimmer {
-    width: 80%;
-    height: 80%;
-    border-radius: 8px;
-}
-
-.title-shimmer {
-    width: 70%;
-    height: 32px;
-    margin-bottom: 12px;
-}
-
-.category-shimmer {
-    width: 120px;
-    height: 18px;
-}
-
-.rating-shimmer {
-    width: 60px;
-    height: 18px;
-}
-
-.price-shimmer {
-    width: 80px;
-    height: 24px;
-    margin-bottom: 10px;
-}
-
-.button-shimmer {
-    width: 100%;
-    height: 38px;
-    border-radius: var(--btn-radius);
-}
-
-.description-shimmer {
-    flex: 1;
-    padding-top: 8px;
 }
 
 </style>
