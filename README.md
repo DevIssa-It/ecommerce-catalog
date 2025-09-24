@@ -1,18 +1,25 @@
-# ecommerce-catalog
+# E-commerce Catalog
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue.js E-commerce Product Catalog with responsive design and interactive product card components.
 
-## Recommended IDE Setup
+## 🌐 Live Demo
+**Application**: https://ecommerce-catalog-orpin.vercel.app/
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## ✨ Features
+- Responsive product card display
+- Interactive rating system with animated stars
+- Product image gallery
+- Category filtering
+- Mobile-optimized design
+- Accessibility compliant (ARIA labels)
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ Tech Stack
+- **Frontend**: Vue.js 3 (Composition API)
+- **Language**: TypeScript
+- **Styling**: CSS3 with custom properties
+- **Build Tool**: Vite
+- **Testing**: Vitest + Cypress
+- **Deployment**: Vercel
 
 ## Project Setup
 
