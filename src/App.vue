@@ -1,28 +1,17 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import ProductCard from "./components/ProductCard.vue";
-import { fetchProductsById } from "./services/ProductService.ts";
+import { fetchProductsById, type Product } from "./services/ProductService.ts";
 import "./assets/styles.css"
-
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
 
 const index = ref(1);
 const currentProduct = ref<Product | null>(null);
 
 const loadProduct = async () => {
+  currentProduct.value = null;
+  
   try {
-    const product =await fetchProductsById(index.value);
+    const product = await fetchProductsById(index.value);
     if (
       product.category === "men's clothing" ||
       product.category === "women's clothing"
@@ -37,10 +26,9 @@ const loadProduct = async () => {
 }
 
 const nextProduct = () => {
-  index.value++
+  index.value++;
   if (index.value > 20) index.value = 1;
-  loadProduct(); {
-  }
+  loadProduct();
 }
 
 onMounted(loadProduct);

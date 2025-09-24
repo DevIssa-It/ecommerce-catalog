@@ -120,6 +120,11 @@ body, html {
     background: #DCDCDC;
 }
 
+.page-men .circle.filled {
+    background: var(--men-primary);
+    color: transparent;
+}
+
 .page-women .product-title {
     font-family: 'inter', sans-serif;
     font-size: 28px;
@@ -159,4 +164,9 @@ body, html {
 
 .page-women .next-product:hover {
     background: #DCDCDC;
+}
+
+.page-women .circle.filled {
+    background: var(--women-primary);
+    color: transparent;
 }
