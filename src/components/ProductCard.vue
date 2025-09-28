@@ -173,7 +173,27 @@
     }
     
     .product-image {
+        flex: none;
         max-height: 300px;
+    }
+    
+    .product-image {
+        max-height: none;
+        height: auto;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    
+    .product-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
     }
     
     .product-info {
@@ -198,6 +218,8 @@
     
     .description {
         font-size: 16px;
+        max-height: 120px;
+        overflow-y: auto;
     }
     
     .circle {
@@ -219,11 +241,6 @@
     .buy-now, .next-product {
         padding: 12px;
         font-size: 16px;
-    }
-    
-    .product-image img {
-        max-width: 100%;
-        max-height: 100%;
     }
 }
 
